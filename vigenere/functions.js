@@ -2,6 +2,8 @@ export const add = (a, b) => a + b
 export const letterToAscii = letter => letter.charCodeAt()
 export const asciiToLetter = ascii => String.fromCharCode(ascii)
 export const xor = (value, key) => value ^ key
+export const hexToDec = (hex) => parseInt('0x' + hex)
+export const decToHex = (dec) => (dec).toString(16)
 export const getEveryNChars = (text, n) => text.split('').filter((_, i) => i % n === 0)
 export const range = (fromIncl, toIncl) => [...Array(toIncl - fromIncl + 1)].map((_, i) => i + fromIncl)
 
