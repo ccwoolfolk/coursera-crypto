@@ -48,4 +48,20 @@
 - Hard to distinguish F_k from uniform perm even for attackers running in time ~2^n (more powerful than polynomial time)
 
 ### AES
+- Advanced Encryption Standard
+- Block length = 128 bits
+- Key length = 128, 192, or 256 bits
+- No real reason to use anything else
+
+## CPA-Secure encryptions from PRFs/Block ciphers
+- For large enough n, a random permutation is indistinguishable from a random function
+- So block ciphers are good PRFs
+- Gen(1^n): choose a uniform key ({0, 1}^n)
+- Enc_k(m), for |m|=|k|:
+  - Choose uniform r ({0,1}^n)
+  - Output ciphertext: r, F_k(r) XOR m
+- Dec_k(<c1,c2>): output c2 XOR F_k(c1)
+- The key is as long as the message, but the scheme can encrypt _multiple_ messages
+
+## Modes of encryption
 
